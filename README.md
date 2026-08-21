@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App
+
+A modern weather dashboard built using Next.js and Tailwind CSS. It fetches live weather data for any city and displays detailed information such as temperature, feels like, humidity, wind speed, visibility, pressure, sunrise, and sunset. The OpenWeatherMap API is used to fetch the data.
+
+## Features
+
+- Search weather by city name
+- Real-time weather data from OpenWeatherMap
+- Responsive weather dashboard UI
+- Tailwind CSS styling
+- Font Awesome icons for weather and metrics
+- Weather details including:
+  - Temperature
+  - Feels like
+  - Humidity
+  - Wind speed
+  - Cloud coverage
+  - Pressure
+  - Visibility
+  - Sunrise and sunset
+
+## Tech Stack
+
+- Next.js
+- React
+- Tailwind CSS
+- Font Awesome
+- OpenWeatherMap API
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Set up environment variables
+
+Create a `.env.local` file in the root of the project and add your OpenWeatherMap API key:
+
+```bash
+OPENWEATHER_API_KEY=your_api_key_here
+```
+
+### 3. Run the app
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```bash
+src/
+  app/
+    api/
+      weather/
+        route.js
+    globals.css
+    layout.js
+    page.js
+public/
+  weather-icon.svg
+.env.local
+README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+## API Route
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app calls the internal API endpoint:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+/api/weather?city=%city_name%
+```
 
-## Deploy on Vercel
+This route gives the request to OpenWeatherMap using the stored API key.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Make sure your OpenWeatherMap API key is valid and enabled.
+- If the city is not found or the API fails, the app shows a friendly error state.
+
+## License
+
+This project is licensed under the MIT License.
+
+MIT License
+
+Copyright (c) 2026
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
