@@ -1,0 +1,24 @@
+{
+  "name": "WeatherNext",
+  "short_name": "weather-next",
+  "description": "Live weather dashboard!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#082f49",
+  "theme_color": "#0c4a6e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/weather-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/weather-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

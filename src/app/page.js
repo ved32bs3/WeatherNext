@@ -18,6 +18,7 @@ const formatTime = (timestamp, timezone = 0) => {
 
   const date = new Date((timestamp + timezone) * 1000);
   return date.toLocaleTimeString([], {
+    timeZone: "UTC",
     hour: "2-digit",
     minute: "2-digit",
   });
@@ -90,13 +91,13 @@ export default function Home() {
         {
           key: "sunrise",
           label: "Sunrise",
-          value: formatTime(weather.sys?.sunrise),
+          value: formatTime(weather.sys?.sunrise, weather.timezone),
           icon: "fa-solid fa-sun",
         },
         {
           key: "sunset",
           label: "Sunset",
-          value: formatTime(weather.sys?.sunset),
+          value: formatTime(weather.sys?.sunset, weather.timezone),
           icon: "fa-solid fa-moon",
         },
         {
@@ -148,7 +149,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => getWeather(cityName)}
-                  className="inline-flex items-center justify-center rounded-xl bg-sky-500 px-5 py-3 font-semibold text-white transition hover:bg-sky-400"
+                  className="cursor-pointer inline-flex items-center justify-center rounded-xl bg-sky-500 px-5 py-3 font-semibold text-white transition hover:bg-sky-400"
                 >
                   <i className="fa-solid fa-magnifying-glass mr-2" />
                   Search

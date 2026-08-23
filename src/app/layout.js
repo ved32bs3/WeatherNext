@@ -13,7 +13,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "WeatherNext",
-  description: "Live weather dashboard",
+  description: "Live weather dashboard!",
+  manifest: "/manifest.json",
   icons: {
     icon: "/weather-icon.svg",
   },
