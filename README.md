@@ -2,6 +2,8 @@
 
 A modern weather dashboard built using Next.js and Tailwind CSS. It fetches live weather data for any city and displays detailed information such as temperature, feels like, humidity, wind speed, visibility, pressure, sunrise, and sunset. The OpenWeatherMap API is used to fetch the data.
 
+> Online link for the project preview: https://weather-next-chi.vercel.app/
+
 ## Features
 
 - Search weather by city name
